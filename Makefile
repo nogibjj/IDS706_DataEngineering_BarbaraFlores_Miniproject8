@@ -11,7 +11,7 @@ format:
 
 lint:
 	#pylint --disable=R,C --ignore-patterns=test_.*?py *.py src/mylib/*.py
-	pylint --disable=R,C --ignore-patterns=test_.*?py src/*.py
+	pylint --disable=R,C --ignore-patterns=test_.*?py python/*.py
 
 container-lint:
 	docker run --rm -i hadolint/hadolint < Dockerfile
