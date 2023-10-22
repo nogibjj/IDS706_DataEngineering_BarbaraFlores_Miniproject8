@@ -1,7 +1,6 @@
 """
 ETL-Query script
 """
-import requests
 import sqlite3
 from prettytable import PrettyTable
 
