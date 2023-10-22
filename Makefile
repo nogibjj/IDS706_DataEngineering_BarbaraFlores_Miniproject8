@@ -7,7 +7,7 @@ test:
 	python -m pytest -vv --cov=main test_*.py
 
 format:	
-	black src/*.py 
+	black python/*.py 
 
 lint:
 	#pylint --disable=R,C --ignore-patterns=test_.*?py *.py src/mylib/*.py
