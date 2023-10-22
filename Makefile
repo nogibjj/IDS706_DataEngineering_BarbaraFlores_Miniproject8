@@ -7,7 +7,7 @@ test:
 	python -m pytest -vv --cov=main test_*.py
 
 format:	
-	black *.py 
+	black EtlTool/*.py 
 
 lint:
 	#pylint --disable=R,C --ignore-patterns=test_.*?py *.py EtlTool/mylib/*.py
