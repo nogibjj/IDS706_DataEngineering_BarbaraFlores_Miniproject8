@@ -6,7 +6,7 @@ from prettytable import PrettyTable
 
 
 def query():
-    db_path = "src/data/WorldSmallDB.db"
+    db_path = "data/WorldSmallDB.db"
     conn = sqlite3.connect(db_path)
     cursor = conn.cursor()
 

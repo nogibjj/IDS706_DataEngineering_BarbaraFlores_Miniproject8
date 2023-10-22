@@ -7,7 +7,7 @@ import unittest
 
 class TestDatabaseQuery(unittest.TestCase):
     def setUp(self):
-        self.db_path = "src/data/WorldSmallDB.db"
+        self.db_path = "data/WorldSmallDB.db"
 
     def test_query_random_records(self):
         conn = sqlite3.connect(self.db_path)
