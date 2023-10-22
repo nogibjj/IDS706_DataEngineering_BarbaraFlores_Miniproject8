@@ -7,11 +7,11 @@ test:
 	python -m pytest -vv --cov=main test_*.py
 
 format:	
-	black EtlTool/*.py 
+	black src/*.py 
 
 lint:
-	#pylint --disable=R,C --ignore-patterns=test_.*?py *.py EtlTool/mylib/*.py
-	pylint --disable=R,C --ignore-patterns=test_.*?py EtlTool/*.py
+	#pylint --disable=R,C --ignore-patterns=test_.*?py *.py src/mylib/*.py
+	pylint --disable=R,C --ignore-patterns=test_.*?py src/*.py
 
 container-lint:
 	docker run --rm -i hadolint/hadolint < Dockerfile
