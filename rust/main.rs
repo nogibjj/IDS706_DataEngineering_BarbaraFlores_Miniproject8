@@ -44,28 +44,6 @@ fn query() -> Result<(), rusqlite::Error> {
 
     println!("\nHow many records per continent does our database have?\n");
     print_table(&cursor, rows.iter().map(|(r, c)| vec![r.clone(), c.to_string()]).collect());
-
-    // Query 3
-    let mut cursor = conn.prepare("SELECT region, AVG(gdppcap08), MIN(gdppcap08), MAX(gdppcap08) FROM WorldSmallDB GROUP BY region")?;
-    let rows = cursor
-        .query_map([], |row| {
-            let region: String = row.get(0)?;
-            let avg: f64 = row.get(1)?;
-            let min: f64 = row.get(2)?;
-            let max: f64 = row.get(3)?;
-            Ok((region, avg, min, max))
-        })?
-        .collect::<Result<Vec<(String, f64, f64, f64)>, rusqlite::Error>>()?;
-
-    println!("\nHow does Gross Domestic Product per capita behave in 2008 in each continent? What are its mean, maximum, and minimum values?\n");
-    print_table(
-        &cursor,
-        rows
-            .iter()
-            .map(|(r, avg, min, max)| vec![r.clone(), avg.to_string(), min.to_string(), max.to_string()])
-            .collect(),
-    );
-
     Ok(())
 }
 

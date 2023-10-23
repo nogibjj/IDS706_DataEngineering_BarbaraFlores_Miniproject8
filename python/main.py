@@ -1,8 +1,7 @@
-"""
-ETL-Query script
-"""
 import sqlite3
 from prettytable import PrettyTable
+import time
+import psutil
 
 def print_table(cursor, data):
     table = PrettyTable()
@@ -11,34 +10,34 @@ def print_table(cursor, data):
         table.add_row(row)
     print(table)
 
-def query():
+def execute_query(cursor, query):
+    start_time = time.time()
+    process = psutil.Process()
+    memory_before = process.memory_info().rss
+    cursor.execute(query)
+    data = cursor.fetchall()
+    end_time = time.time()
+    elapsed_time = end_time - start_time
+    memory_after = process.memory_info().rss
+    memory_diff = memory_after - memory_before
+    print_table(cursor, data)
+    print(f"Query completed in {elapsed_time:.6f} seconds")
+    print(f"Memory used: {memory_diff / (1024 * 1024):.8f} MB")  # Aumento de precisión a 4 decimales
+
+def main():
     db_path = "data/WorldSmallDB.db"
     conn = sqlite3.connect(db_path)
     cursor = conn.cursor()
 
-    print("\nLet's quickly review our database. Let's take a sample of how it is constructed.\n")
-    cursor.execute("SELECT * FROM WorldSmallDB ORDER BY RANDOM() LIMIT 5")
-    print_table(cursor, cursor.fetchall())
- 
-    print("\nHow many records per continent does our database have?\n")
-    cursor.execute(
-        "SELECT region, COUNT(*) AS N FROM WorldSmallDB GROUP BY region"
-    )
-    print_table(cursor, cursor.fetchall())
-
-    print("\nHow does Gross Domestic Product per capita behave in 2008 in each continent? What are its mean, maximum, and minimum values?\n")
-    cursor.execute(
-        "SELECT region, AVG(gdppcap08), MIN(gdppcap08), MAX(gdppcap08) FROM WorldSmallDB GROUP BY region"
-    )
-    print_table(cursor, cursor.fetchall())
-    conn.close()
-
-
-def main():
-
-    # Query
     print("Querying data...")
-    query()
+    
+    print("\nLet's quickly review our database. Let's take a sample of how it is constructed.\n")
+    execute_query(cursor, "SELECT * FROM WorldSmallDB ORDER BY RANDOM() LIMIT 5")
+    
+    print("\nHow many records per continent does our database have?\n")
+    execute_query(cursor, "SELECT region, COUNT(*) AS N FROM WorldSmallDB GROUP BY region")
+    
+    conn.close()
 
 if __name__ == "__main__":
     main()
