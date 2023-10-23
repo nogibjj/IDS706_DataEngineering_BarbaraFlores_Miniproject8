@@ -24,9 +24,9 @@ The following table clearly shows the differences in execution times between Pyt
 
 | Script | Query | Execution Time |
 |--------|-------|-----------------|
-| Python |   1   | 0.0003100 seconds |
-| Python |   2   | 0.0001050 seconds |
-| Rust   |   1   | 0.0003073 seconds |
-| Rust   |   2   | 0.0001001 seconds |
+| Python |   1   | 0.000310 seconds |
+| Python |   2   | 0.000105 seconds |
+| Rust   |   1   | 307.30µs seconds |
+| Rust   |   2   | 100.10µs seconds |
 
 
