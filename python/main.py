@@ -13,13 +13,13 @@ def print_table(cursor, data):
 def execute_query(cursor, query):
     start_time = time.time()
     process = psutil.Process()
-    memory_before = process.memory_info().rss
+    #memory_before = process.memory_info().rss
     cursor.execute(query)
     data = cursor.fetchall()
     end_time = time.time()
     elapsed_time = end_time - start_time
-    memory_after = process.memory_info().rss
-    memory_diff = memory_after - memory_before
+    #memory_after = process.memory_info().rss
+    #memory_diff = memory_after - memory_before
     print_table(cursor, data)
     print(f"Query completed in {elapsed_time:.6f} seconds")
     #print(f"Memory used: {memory_diff / (1024 * 1024):.8f} MB")  # Aumento de precisión a 4 decimales
