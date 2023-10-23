@@ -29,4 +29,9 @@ The following table clearly shows the differences in execution times between Pyt
 | Rust   |   1   | 307.30µs seconds |
 | Rust   |   2   | 100.10µs seconds |
 
+Finally, Rust offers several advantages over Python, including higher execution speed, stronger compile-time safety to prevent common errors, more precise memory control, lower resource consumption, and the ability to compile code into stand-alone binaries, making it ideal for high-performance applications and embedded systems where efficiency and control are required. While Python is known for its ease of use and versatility, Rust provides a more robust and efficient approach for applications that demand uncompromised performance and security.
+
+
+
+
 
