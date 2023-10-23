@@ -18,7 +18,6 @@ In the following images, we provide a comparative analysis of the Python script 
 ![Python Performance](https://raw.githubusercontent.com/nogibjj/IDS706_DataEngineering_BarbaraFlores_Miniproject8/main/images/python_performance.png)
 
 #### Rust
-
 ![Rust Performance](https://raw.githubusercontent.com/nogibjj/IDS706_DataEngineering_BarbaraFlores_Miniproject8/main/images/rust_performance.png)
 
 The following table clearly shows the differences in execution times between Python and Rust. In both queries, Rust significantly outperforms Python in terms of speed, with execution times in microseconds (µs) rather than milliseconds (ms) as in Python. This highlights the efficiency of Rust in handling database queries compared to Python.
