@@ -9,4 +9,4 @@ This project involves rewriting an existing Python data processing script in the
 
 ### 2. Rewrite it in Rust
 
-### 2. Highlight improvements in speed and resource usage
+### 3. Highlight improvements in speed and resource usage
