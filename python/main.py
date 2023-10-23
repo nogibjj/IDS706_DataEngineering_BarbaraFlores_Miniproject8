@@ -1,7 +1,7 @@
 import sqlite3
 from prettytable import PrettyTable
 import time
-import psutil
+#import psutil
 
 def print_table(cursor, data):
     table = PrettyTable()
@@ -12,7 +12,7 @@ def print_table(cursor, data):
 
 def execute_query(cursor, query):
     start_time = time.time()
-    process = psutil.Process()
+    #process = psutil.Process()
     #memory_before = process.memory_info().rss
     cursor.execute(query)
     data = cursor.fetchall()
