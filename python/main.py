@@ -22,7 +22,7 @@ def execute_query(cursor, query):
     memory_diff = memory_after - memory_before
     print_table(cursor, data)
     print(f"Query completed in {elapsed_time:.6f} seconds")
-    print(f"Memory used: {memory_diff / (1024 * 1024):.8f} MB")  # Aumento de precisión a 4 decimales
+    #print(f"Memory used: {memory_diff / (1024 * 1024):.8f} MB")  # Aumento de precisión a 4 decimales
 
 def main():
     db_path = "data/WorldSmallDB.db"
