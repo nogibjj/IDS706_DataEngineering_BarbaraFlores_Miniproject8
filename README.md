@@ -13,3 +13,6 @@ Starting from the previous script and utilizing the Copilot tool, the code was r
 
 ### 3. Highlight improvements in speed and resource usage
 
+![Python Performance](https://raw.githubusercontent.com/nogibjj/IDS706_DataEngineering_BarbaraFlores_Miniproject8/main/images/python_performance.png)
+
+![Rust Performance](https://raw.githubusercontent.com/nogibjj/IDS706_DataEngineering_BarbaraFlores_Miniproject8/main/images/rust_performance.png)
