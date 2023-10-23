@@ -10,4 +10,3 @@ pylint==3.0.0
 prettytable==3.9.0
 setuptools==44.0.0
 wheel==0.41.2
-psutil==2.42.0
